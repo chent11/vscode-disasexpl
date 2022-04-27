@@ -579,7 +579,7 @@ export class AsmParser {
         const asm: AsmLine[] = [];
         const labelDefinitions = new Map<string, number>();
 
-        const asmLines = asmResult.split('\n');
+        const asmLines = asmResult.replace(/\r/g, '').split('\n');
         let source: AsmSource | undefined;
         let func: string | undefined;
 
